@@ -24,3 +24,10 @@ for i in range(256):
     using subprocess lib to run .zip and hashlib to aplicate md5.
 
 """
+
+"""
+    Neste laboratório, tínhamos um arquivo com senha. A dica é que a senha é composta pelos dois bytes md5.
+    Então o que eu fiz foi permutar e testar todas as possibilidades de dois bytes e aplicar md5 (65.536)
+    usando subprocess lib para executar .zip e hashlib para aplicar md5.
+    
+"""
