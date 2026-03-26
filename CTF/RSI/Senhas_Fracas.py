@@ -15,3 +15,12 @@ for i in range(256):
             print(f"Senha encontrada:{cript}")
             subprocess.run(["unzip", "-P", cript, arquivo])
             exit()
+
+
+
+"""
+    In this lab, we had an archive with password. The tip is that the password is composed of the two byte md5.
+    So what i did was to permutate and test every possibility of two bytes, and aplicate md5 (65.536)
+    using subprocess lib to run .zip and hashlib to aplicate md5.
+
+"""
